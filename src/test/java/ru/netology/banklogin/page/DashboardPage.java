@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DashboardPage {
-    private final SelenideElement heading =$("[data-test-id=dashboard]");
-   public DashboardPage (){
-       heading.shouldHave(text("Личный кабинет")).shouldBe(visible);
+    public DashboardPage (){
+        SelenideElement heading = $("[data-test-id=dashboard]");
+        heading.shouldHave(text("Личный кабинет")).shouldBe(visible);
    }
 }
