@@ -3,6 +3,7 @@ package ru.netology.banklogin.data;
 import lombok.SneakyThrows;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import javax.management.Query;
 import java.sql.Connection;
@@ -20,10 +21,10 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static DataHelper.VerificationCode getVerificationCode() {
+    public static String getVerificationCode() {
         var codeSQL = "SELECT code FROM auth_codes";
         var conn = getConn();
-        return QUERY_RUNNER.query(conn, codeSQL, new BeanHandler<>(DataHelper.VerificationCode.class));
+        return QUERY_RUNNER.query(conn, codeSQL, new ScalarHandler<>());
     }
 
     @SneakyThrows
