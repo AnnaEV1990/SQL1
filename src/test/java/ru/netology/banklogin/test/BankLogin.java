@@ -2,10 +2,7 @@ package ru.netology.banklogin.test;
 
 
 import org.junit.jupiter.api.*;
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.DisplayName;
-import org.testng.annotations.Test;
+
 import ru.netology.banklogin.data.DataHelper;
 import ru.netology.banklogin.data.SQLHelper;
 import ru.netology.banklogin.page.LoginPage;
@@ -40,7 +37,7 @@ public class BankLogin {
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.verifyVerificationPageVisibility();
         var verificationCode = SQLHelper.getVerificationCode();
-       verificationPage.validVerify(verificationCode);
+        verificationPage.validVerify(verificationCode);
     }
 
     @Test
