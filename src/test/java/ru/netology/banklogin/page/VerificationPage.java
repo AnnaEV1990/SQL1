@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class VerificationPage {
     private final SelenideElement codeField=$("[data-test-id=code] input");
     private final SelenideElement verifyButton=$("[data-test-id=action-verify");
-    private final SelenideElement errorNotification=$("[data-test-id='error-notification] .notification__connect");
+    private final SelenideElement errorNotification=$("[data-test-id=error-notification] .notification__content");
 
     public void verifyVerificationPageVisibility(){
         codeField.shouldBe(visible);
